@@ -8,16 +8,17 @@ function page(url,res) {
     res.write(htmlfs);
     res.end();
   }
-  if(url === include('login.js')){
-    res.writeHead(200, { "Content-Type": "text/html" });
-    const htmlfs = fs.readFileSync("./src/views/JS/login.js", "utf8");
-    res.write(htmlfs);
+  if (url === "/src/views/JS/login.js") {
+    res.writeHead(200, { "Content-Type": "application/javascript" });
+    const jsfs = fs.readFileSync("./src/views/JS/login.js", "utf8");
+    res.write(jsfs);
     res.end();
+  
   }
-  if(url === include('login.css')){
-    res.writeHead(200, { "Content-Type": "text/html" });
-    const htmlfs = fs.readFileSync("./src/views/CSS/login.css", "utf8");
-    res.write(htmlfs);
+  if (url === "/src/views/CSS/login.css") {
+    res.writeHead(200, { "Content-Type": "text/css" });
+    const cssfs = fs.readFileSync("./src/views/CSS/login.css", "utf8");
+    res.write(cssfs);
     res.end();
   }
   if(url === "/register"){}
@@ -37,6 +38,7 @@ const server = http.createServer((req, res) => {
   catch(err){
     console.log('서버 응답 안 받아');
   }
+
   // if (req.method === "GET") {
   //   if (req.url === "/") {
   //     res.writeHead(200, { "Content-Type": "text/html" });
@@ -44,6 +46,12 @@ const server = http.createServer((req, res) => {
   //     res.write(htmlfs);
   //     res.end();
   //   }
+  //   if (req.url  === "/src/views/CSS/login.css") {
+  //     res.writeHead(200, { "Content-Type": "text/css" });
+  //     const cssfs = fs.readFileSync("./src/views/CSS/login.css", "utf8");
+  //     res.write(cssfs);
+  //     res.end();
+  //   }}
       // const testdb = new db("localhost", "root", "1234", "testdb");
       // res.end(
       //   console.log(
@@ -57,7 +65,7 @@ const server = http.createServer((req, res) => {
       //   )
       // );
     
-  
+        
   // if (req.method === "POST") {
   // }
 });
