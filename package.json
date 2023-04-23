@@ -12,5 +12,6 @@
   "license": "ISC",
   "dependencies": {
     "mysql2": "^3.2.3"
-  }
+  },
+  "baseUrl": "./"
 }
