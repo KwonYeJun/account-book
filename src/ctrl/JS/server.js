@@ -13,7 +13,6 @@ function page(url,res) {
     const jsfs = fs.readFileSync("./src/views/JS/login.js", "utf8");
     res.write(jsfs);
     res.end();
-  
   }
   if (url === "/src/views/CSS/login.css") {
     res.writeHead(200, { "Content-Type": "text/css" });
@@ -70,6 +69,8 @@ const server = http.createServer((req, res) => {
   // }
 });
 
-server.listen(2222, (error) => {
-  console.log(error);
-});
+export default server;
+
+// server.listen(2222, (error) => {
+//   console.log(error);
+// });

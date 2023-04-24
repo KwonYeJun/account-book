@@ -1,6 +1,7 @@
-const a = 95;
-switch (true) {
-  case (a >= 90 && a <= 100):
-    console.log('90~100');
-    break;
-  default:}
+import server from './src/ctrl/JS/server.js';
+
+server.listen(2222, (error) => {
+  console.log(error);
+});
+
+console.log(server);
