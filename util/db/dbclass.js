@@ -22,7 +22,6 @@ class db {
   constructor(host, user, password, database) {
     this.connect(host, user, password, database);
   }
-
   connect(host, user, password, database) {
     this.connection = mysql2.createConnection({
       host: host,
@@ -30,7 +29,7 @@ class db {
       password: password,
       database: database,
     });
-
+ 
     this.connection.connect((err) => {
       if (err) {
         console.error("error connecting: " + err.stack);
@@ -39,7 +38,6 @@ class db {
       console.log("connected as id " + this.connection.threadId);
     });
   }
-
   query(sql, values, callback) {
     this.connection.query(sql, values, (error, results, fields) => {
       if (error) {
@@ -49,7 +47,6 @@ class db {
       callback(null, results);
     });
   }
-
 }
 
 // const dbInstance = new db("localhost", "root", "1234", "testdb");

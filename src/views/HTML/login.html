@@ -11,7 +11,7 @@
   <div class="wrapper">
     <div class="container">
       <div class="sign-up-container">
-        <form>
+        <form action="accountcreate" method="post">
           <h1>Create Account</h1>
           <div class="social-links">
             <div>
@@ -69,6 +69,11 @@
   const signUpBtn = document.getElementById("signUp");
 const signInBtn = document.getElementById("signIn");
 const container = document.querySelector(".container");
+const form_btn = document.querySelector(".form_btn");
+
+form_btn.addEventListener('click', function(){
+
+})
 
 signUpBtn.addEventListener("click", () => {
   container.classList.add("right-panel-active");
