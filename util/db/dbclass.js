@@ -52,17 +52,17 @@ class db {
 
 }
 
-const dbInstance = new db("localhost", "root", "1234", "testdb");
-// console.log(dbInstance);
-dbInstance.query(
-  "desc new_table",
-  (err, rows) => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(rows);
-    }
-  }
-);
+// const dbInstance = new db("localhost", "root", "1234", "testdb");
+// // console.log(dbInstance);
+// dbInstance.query(
+//   "desc new_table",
+//   (err, rows) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(rows);
+//     }
+//   }
+// );
 
 export default db;
