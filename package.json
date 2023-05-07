@@ -11,8 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@handsontable-pro/react": "^2.1.1",
+    "@handsontable/react": "^12.3.3",
     "express": "^4.18.2",
-    "mysql2": "^3.2.3"
+    "handsontable": "^12.3.3",
+    "mysql2": "^3.2.3",
+    "xlsx": "^0.18.5"
   },
   "baseUrl": "./"
 }
