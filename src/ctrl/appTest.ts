@@ -33,8 +33,10 @@ app.use(express.json());
 
 app.post('/data', (req: Request, res: Response) => {
   const postData = req.body; // POST 데이터는 req.body에서 접근 가능합니다.
+  console.log(postData);
   // 데이터 처리 로직 작성
   res.send('데이터가 성공적으로 전송되었습니다.');
+  
 });
 
 app.post('/', (req : Request, res: Response) => {

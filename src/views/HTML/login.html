@@ -11,7 +11,7 @@
   <div class="wrapper">
     <div class="container">
       <div class="sign-up-container">
-        <form>
+        <form action="createAccount" method="post">
           <h1>Create Account</h1>
           <div class="social-links">
             <div>
@@ -32,7 +32,7 @@
         </form>
       </div>
       <div class="sign-in-container">
-        <form>
+        <form action="signIn" method="post">
           <h1>Sign In</h1>
           <div class="social-links">
             <div>
@@ -78,6 +78,23 @@ signInBtn.addEventListener("click", () => {
 });
 
 </script>
+<!-- <script>
+  // 회원가입 폼 submit 이벤트 처리
+  const signupForm = document.getElementById("signupForm");
+  signupForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // 기본 동작 막기
+    // 폼 데이터 처리 및 AJAX 요청 등
+  });
+
+  // 로그인 폼 submit 이벤트 처리
+  const signinForm = document.getElementById("signinForm");
+  signinForm.addEventListener("submit", (event) => {
+    event.preventDefault(); // 기본 동작 막기
+    // 폼 데이터 처리 및 AJAX 요청 등
+  });
+
+  // 생략
+</script> -->
 <script src="./src/views/JS/login.js"></script>
 </body>
 </html>
