@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
   <title>Document</title>
   <link rel="stylesheet" href="./src/views/CSS/login.css">
 </head>
+
 <body>
   <div class="wrapper">
     <div class="container">
       <div class="sign-up-container">
-        <form action="createAccount" method="post">
+        <form action="/createAccount" method="post" id="signupForm">
           <h1>Create Account</h1>
           <div class="social-links">
             <div>
@@ -32,7 +34,7 @@
         </form>
       </div>
       <div class="sign-in-container">
-        <form action="signIn" method="post">
+        <form action="/signIn" method="post" id="signinForm">
           <h1>Sign In</h1>
           <div class="social-links">
             <div>
@@ -65,36 +67,46 @@
       </div>
     </div>
   </div>
-<!-- <script>
-  const signUpBtn = document.getElementById("signUp");
-const signInBtn = document.getElementById("signIn");
-const container = document.querySelector(".container");
-
-signUpBtn.addEventListener("click", () => {
-  container.classList.add("right-panel-active");
-});
-signInBtn.addEventListener("click", () => {
-  container.classList.remove("right-panel-active");
-});
-
+  <!-- <script>
+  
 </script> -->
-<script>
-  // 회원가입 폼 submit 이벤트 처리
-  const signupForm = document.getElementById("signupForm");
-  signupForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // 기본 동작 막기
-    // 폼 데이터 처리 및 AJAX 요청 등
-  });
+  <script>
+    // 회원가입 폼 submit 이벤트 처리
+    const signUpBtn = document.getElementById("signUp");
+    const signInBtn = document.getElementById("signIn");
+    const container = document.querySelector(".container");
 
-  // 로그인 폼 submit 이벤트 처리
-  const signinForm = document.getElementById("signinForm");
-  signinForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // 기본 동작 막기
-    // 폼 데이터 처리 및 AJAX 요청 등
-  });
+    signUpBtn.addEventListener("click", () => {
+      container.classList.add("right-panel-active");
+    });
+    signInBtn.addEventListener("click", () => {
+      container.classList.remove("right-panel-active");
+    });
+
+
+    const signupForm = document.getElementById("signupForm");
+    signupForm.addEventListener("submit", (event) => {
+      console.log("signdata", event.email, event.password);
+
+      event.preventDefault(); // 기본 동작 막기
+      // 폼 데이터 처리 및 AJAX 요청 등
+      console.log("sign", event);
+    });
+
+    // 로그인 폼 submit 이벤트 처리
+    const signinForm = document.getElementById("signinForm");
+    signinForm.addEventListener("submit", (event) => {
+      console.log("signdata", event.email, event.password);
+
+      event.preventDefault(); // 기본 동작 막기
+      // 폼 데이터 처리 및 AJAX 요청 등
+      console.log("signup", event);
+
+    });
 
   // 생략
-</script>
-<script src="./src/views/JS/login.js"></script>
+  </script>
+  <script src="./src/views/JS/login.js"></script>
 </body>
+
 </html>
