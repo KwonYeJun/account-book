@@ -1,23 +1,26 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/App.tsx',
+  entry: '/src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
   },
+  devServer: {
+    // static: {
+    //   directory: path.join(__dirname, 'public'), // 웹 서버의 기준 경로 설정
+    // },
+    port: 3333, // 사용할 포트 번호 설정
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx)$/,
+        test: /\.(js|jsx|ts|tsx|css)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: ['babel-loader','ts-loader','style-loader', 'css-loader'],
       },
     ],
   },
-  
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
