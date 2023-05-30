@@ -18,10 +18,11 @@ module.exports = {
         test: /\.(js|jsx|ts|tsx|css)$/,
         exclude: /node_modules/,
         use: ['babel-loader','ts-loader','style-loader', 'css-loader'],
+        // include: path.resolve(__dirname, 'src/views/css') // CSS 파일 경로
       },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx','css'],
   },
 };
