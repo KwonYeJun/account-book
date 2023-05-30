@@ -27,13 +27,13 @@
             </div>
           </div>
           <span>or use your email for registration</span>
-          <input type="text" placeholder="Name">
-          <input type="email" placeholder="Email">
-          <input type="password" placeholder="Password">
+          <input type="text" placeholder="Name" name="name"> <!-- name 속성 추가 -->
+          <input type="email" placeholder="Email" name="email"> <!-- name 속성 추가 -->
+          <input type="password" placeholder="Password" name="password"> <!-- name 속성 추가 -->
           <button class="form_btn">Sign Up</button>
         </form>
       </div>
-      <div class="sign-in-container">
+      <div c lass="sign-in-container">
         <form action="/signIn" method="post" id="signinForm">
           <h1>Sign In</h1>
           <div class="social-links">
@@ -78,6 +78,7 @@
 
     signUpBtn.addEventListener("click", () => {
       container.classList.add("right-panel-active");
+      
     });
     signInBtn.addEventListener("click", () => {
       container.classList.remove("right-panel-active");
