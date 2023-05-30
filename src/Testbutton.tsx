@@ -1,5 +1,4 @@
 import React from 'react';
-import './login.css'; // CSS 파일 경로
 
 // CSS 파일을 import하여 스타일을 적용할 수 있습니다.
 

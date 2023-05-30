@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: '/src/index.tsx',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -15,14 +15,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx|ts|tsx|css)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader','ts-loader','style-loader', 'css-loader'],
-        // include: path.resolve(__dirname, 'src/views/css') // CSS 파일 경로
+        use: ['babel-loader', 'ts-loader'],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx','css'],
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.css'],
   },
 };
