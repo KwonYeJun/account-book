@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 
 // 메인 페이지를 연결해 주기 위하며 처음 접속을 도와주는 미들 웨워 하나와 같이 파일을 정적으로 연결을 해주었다.
 app.get("/", (req: Request, res: Response) => {
-  const filePath = path.join(root, '/src/views/html/login.html');
+  const filePath = path.join(root, '/public/index.html');
   res.sendFile(filePath);
 });
 app.use(express.static(path.join(root, "/src/views")));
