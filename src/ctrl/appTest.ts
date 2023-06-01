@@ -18,7 +18,7 @@ app.get("/", (req: Request, res: Response) => {
   const filePath = path.join(root, '/public/index.html');
   res.sendFile(filePath);
 });
-app.use(express.static(path.join(root, "/src/views")));
+// app.use(express.static(path.join(root, "/src/views")));
 
 
 const myMiddleware = (req: Request, res: Response, next: NextFunction) => {
@@ -37,7 +37,7 @@ app.use(express.static(root));
 
 
 
-app.post('/', (req: Request, res: Response) => {
+app.post('/signIn', (req: Request, res: Response) => {
   const postData = req.body; // POST 데이터는 req.body에서 접근 가능합니다.
   console.log(postData);
   // 데이터 처리 로직 작성
