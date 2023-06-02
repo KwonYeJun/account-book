@@ -4,16 +4,28 @@ import React from 'react';
 
 const Login: React.FC = () => {
   const handleSignUp = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log('sign up');
+    // event.preventDefault();
+    console.log("form", FormData);
+
+    console.log(event);
+    // fetch('/test', {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     email: event.id,
+    //     password: pw,
+    //   }),
+    // })
+    // .then((response) => response.json())
+    // .then((result) => console.log(result));
   };
 
   const handleSignIn = (event: React.FormEvent) => {
+    console.log("form", FormData);
     event.preventDefault();
-    console.log('sign in');
+    console.log(event);
   };
 
- 
+
   return (
     <div className="wrapper">
       <div className="container">
@@ -53,8 +65,8 @@ const Login: React.FC = () => {
               </div>
             </div>
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" placeholder="Email" name='email' />
+            <input type="password" placeholder="Password"name='pw' />
             <button className="form_btn">Sign In</button>
           </form>
         </div>

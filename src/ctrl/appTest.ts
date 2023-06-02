@@ -37,7 +37,7 @@ app.use(express.static(root));
 
 
 
-app.post('/', (req: Request, res: Response) => {
+app.post('/test', (req: Request, res: Response) => {
   const postData = req.body; // POST 데이터는 req.body에서 접근 가능합니다.
   console.log(postData);
   // 데이터 처리 로직 작성
