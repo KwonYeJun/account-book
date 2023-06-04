@@ -1,113 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="./src/views/CSS/login.css">
+  <link rel="stylesheet" href="./src/views/CSS/login.scss">
 </head>
-
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="sign-up-container">
-        <form action="/createAccount" method="post" id="signupForm">
-          <h1>Create Account</h1>
-          <div class="social-links">
-            <div>
-              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            </div>
-            <div>
-              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            </div>
-            <div>
-              <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" name="name"> <!-- name 속성 추가 -->
-          <input type="email" placeholder="Email" name="email"> <!-- name 속성 추가 -->
-          <input type="password" placeholder="Password" name="password"> <!-- name 속성 추가 -->
-          <button class="form_btn">Sign Up</button>
-        </form>
+  <div class="container">
+    <!-- Heading -->
+    <h1>SIGN IN</h1>
+    
+    <!-- Links -->
+    <ul class="links">
+      <li>
+        <a href="#" id="signin">SIGN IN</a>
+      </li>
+      <li>
+        <a href="#" id="signup">SIGN UP</a>
+      </li>
+      <li>
+        <a href="#" id="reset">RESET</a>
+      </li>
+    </ul>
+    
+    <!-- Form -->
+    <form  action="" method="post">
+      <!-- email input -->
+      <div class="first-input input__block first-input__block">
+         <input type="email" placeholder="Email" class="input" id="email"   />
       </div>
-      <div c lass="sign-in-container">
-        <form action="/signIn" method="post" id="signinForm">
-          <h1>Sign In</h1>
-          <div class="social-links">
-            <div>
-              <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            </div>
-            <div>
-              <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            </div>
-            <div>
-              <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            </div>
-          </div>
-          <span>or use your account</span>
-          <input type="email" placeholder="Email">
-          <input type="password" placeholder="Password">
-          <button class="form_btn">Sign In</button>
-        </form>
+      <!-- password input -->
+      <div class="input__block">
+         <input type="password" placeholder="Password" class="input" id="password"    />
       </div>
-      <div class="overlay-container">
-        <div class="overlay-left">
-          <h1>Welcome Back</h1>
-          <p>To keep connected with us please login with your personal info</p>
-          <button id="signIn" class="overlay_btn">Sign In</button>
-        </div>
-        <div class="overlay-right">
-          <h1>Hello, Friend</h1>
-          <p>Enter your personal details and start journey with us</p>
-          <button id="signUp" class="overlay_btn">Sign Up</button>
-        </div>
+      <!-- repeat password input -->
+      <div class="input__block">
+         <input type="password" placeholder="Repeat password" class="input repeat__password" id="repeat__password"    />
       </div>
+      <!-- sign in button -->
+      <button class="signin__btn">
+        Sign in
+      </button>
+    </form>
+    <!-- separator -->
+    <div class="separator">
+      <p>OR</p>
     </div>
+    <!-- google button -->
+    <button class="google__btn">
+      <i class="fa fa-google"></i>
+      Sign in with Google
+    </button>
+    <!-- google button -->
+    <button class="github__btn">
+      <i class="fa fa-github"></i>
+      Sign in with GitHub
+    </button>
   </div>
-  <!-- <script>
   
-</script> -->
-  <script>
-    // 회원가입 폼 submit 이벤트 처리
-    const signUpBtn = document.getElementById("signUp");
-    const signInBtn = document.getElementById("signIn");
-    const container = document.querySelector(".container");
-
-    signUpBtn.addEventListener("click", () => {
-      container.classList.add("right-panel-active");
-      
-    });
-    signInBtn.addEventListener("click", () => {
-      container.classList.remove("right-panel-active");
-    });
-
-
-    const signupForm = document.getElementById("signupForm");
-    signupForm.addEventListener("submit", (event) => {
-      console.log("signdata", event.email, event.password);
-
-      event.preventDefault(); // 기본 동작 막기
-      // 폼 데이터 처리 및 AJAX 요청 등
-      console.log("sign", event);
-    });
-
-    // 로그인 폼 submit 이벤트 처리
-    const signinForm = document.getElementById("signinForm");
-    signinForm.addEventListener("submit", (event) => {
-      console.log("signdata", event.email, event.password);
-
-      event.preventDefault(); // 기본 동작 막기
-      // 폼 데이터 처리 및 AJAX 요청 등
-      console.log("signup", event);
-
-    });
-
-  // 생략
-  </script>
-  <script src="./src/views/JS/login.js"></script>
+  <footer>
+    <p>
+      Thank you for watching
+      <i class="fa fa-heart"></i> 
+      <i class="fa fa-heart"></i> 
+      <i class="fa fa-heart"></i> 
+    </p>
+    <p>
+      Chouaib Blgn :
+      <a href="https://www.facebook.com/chouaib45" >
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="http://twitter.com/chouaibblgn45">
+        <i class="fa fa-twitter"></i> 
+      </a>
+      <a href="http://instagram.com/chouaib_blgn">
+        <i class="fa fa-instagram"></i> 
+      </a>
+      <a href="http://linkedin.com/in/chouaibblgn/">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <a href="https://www.behance.net/geek30">
+        <i class="fa fa-behance"></i>
+      </a>
+    </p>
+  </footer>
 </body>
-
 </html>

@@ -9,9 +9,7 @@ console.log(root)
 const app = express();
 
 
-// POST 데이터를 파싱하기 위한 미들웨어
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+
 
 // 메인 페이지를 연결해 주기 위하며 처음 접속을 도와주는 미들 웨워 하나와 같이 파일을 정적으로 연결을 해주었다.
 app.get("/", (req: Request, res: Response) => {
@@ -37,16 +35,26 @@ app.use(express.static(root));
 
 
 
-app.post('/', (req: Request, res: Response) => {
-  const postData = req.body; // POST 데이터는 req.body에서 접근 가능합니다.
-  console.log(postData);
-  // 데이터 처리 로직 작성
-  res.send('데이터가 성공적으로 전송되었습니다.');
+// app.post('/', (req: Request, res: Response) => {
+//   const postData = req.body; // POST 데이터는 req.body에서 접근 가능합니다.
+//   console.log(postData);
+//   // 데이터 처리 로직 작성
+//   res.send('데이터가 성공적으로 전송되었습니다.');
   
+// });
+// POST 데이터를 파싱하기 위한 미들웨어
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+// POST 요청 처리
+app.post('/singIn', (req, res) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  // 수신한 데이터로 수행할 작업을 수행합니다.
+console.log(password, username)
+  res.send('Data received');
 });
-
-
-
 
 
 app.listen(2222, () => {
