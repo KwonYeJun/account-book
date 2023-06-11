@@ -24,7 +24,7 @@ const myMiddleware = (req: Request, res: Response, next: NextFunction) => {
   next(); // 다음 미들웨어로 제어를 전달합니다.
 };
 // 첫 번째 미들 웨워를 실행 시켰을 때 next(); 함수가 있어야 다음 미들 웨어를 실행 시킨다.
-app.use(myMiddleware);
+app.use('*',myMiddleware);
 // 다음으로 실행될 미들 웨어는 웹 브라우저에 제공할 정적 파일들이 위치한 경로입니다.
 app.use(express.static(root));
 
