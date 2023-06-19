@@ -4,10 +4,7 @@ import * as bodyParser from "body-parser";
 const root = path.join(__dirname, "../../")
 console.log(root)
 
-
-
 const app = express();
-
 
 
 
